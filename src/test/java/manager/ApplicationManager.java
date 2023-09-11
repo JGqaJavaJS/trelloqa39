@@ -9,6 +9,7 @@ public class ApplicationManager {
 
     WebDriver driver;
     LoginHelper loginHelper;
+    LogoutHelper logoutHelper;
 
     public void init() {
         driver = new ChromeDriver();
@@ -16,6 +17,7 @@ public class ApplicationManager {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         loginHelper = new LoginHelper(driver);
+        logoutHelper = new LogoutHelper(driver);
     }
 
     public void tearDown() {
@@ -29,5 +31,13 @@ public class ApplicationManager {
 
     public LoginHelper getLoginHelper() {
         return loginHelper;
+    }
+
+    public LogoutHelper getLogoutHelper() {
+        return logoutHelper;
+    }
+
+    public void toMainPage() {
+        driver.navigate().to("https://trello.com/");
     }
 }

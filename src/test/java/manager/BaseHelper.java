@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseHelper {
 
@@ -23,7 +25,18 @@ public class BaseHelper {
     }
 
     public boolean isElementExist(By by) {
-        return (findElementsBase(by).size() > 0);
+        List<WebElement> list = new ArrayList<>();
+
+        try {
+            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            list = findElementsBase(by);
+        } catch (Exception e) {
+            e.getMessage();
+        } finally {
+            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        }
+
+        return (list.size() > 0);
     }
 
     public void clickBase(By by) {
@@ -45,7 +58,7 @@ public class BaseHelper {
 
     public boolean isElementContainsText(String expectedResult, String actualResult) {
         // return actualResult.contains(expectedResult);
-        if(actualResult.contains(expectedResult)) {
+        if (actualResult.contains(expectedResult)) {
             return true;
         } else {
             System.out.println("actual result: " + actualResult +

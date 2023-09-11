@@ -1,6 +1,7 @@
 package manager;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
+import dto.UserDTO;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -43,5 +44,12 @@ public class LoginHelper extends BaseHelper {
     public boolean isWrongPasswordTextDisplays() {
         String actualRes = getTextBase(byErrorPassword);
         return isElementContainsText("Incorrect email address and / or password.".toUpperCase(), actualRes);
+    }
+
+    public void login(UserDTO userDTO) {
+        clickLoginBtn();
+        fillEmailInput(userDTO.getEmail());
+        pause(5000);
+        fillPasswordInput(userDTO.getPassword());
     }
 }
