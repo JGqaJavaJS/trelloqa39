@@ -8,9 +8,7 @@ public class CreateBoardTests extends BaseTest{
     public void preconditions() {
         //go to https://trello.com/u/juliagordyin/boards
      //   app.goToBoardPage((userDTO.getEmail().split("@"))[0]);
-        if(app.getLoginHelper().isElementWorkspaceExist()) {
-
-        } else {
+        if(!app.getLoginHelper().isElementWorkspaceExist()) {
             app.toMainPage();
             app.getLoginHelper().login(userDTO);
         }
