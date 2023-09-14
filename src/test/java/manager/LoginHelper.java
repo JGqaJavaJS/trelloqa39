@@ -2,6 +2,8 @@ package manager;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import dto.UserDTO;
+import dto.UserDtoLombok;
+import dto.UserDtoWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -16,7 +18,7 @@ public class LoginHelper extends BaseHelper {
     By byInputPassword = By.xpath("//input[@id='password']");
     By byBtnConfirmPassword = By.xpath("//button[@id='login-submit']");
     By byTextWorkSpace = By.xpath("//span[@data-testid='home-team-tab-name']");
-    By byErrorPassword = By.xpath("//div[@data-testid='form-error--content']//span//span");
+    By byErrorPassword = By.xpath("//div[@data-testid='form-error--content']//span");
 
     public void clickLoginBtn() {
         clickBase(byBtnLogin);
@@ -47,6 +49,20 @@ public class LoginHelper extends BaseHelper {
     }
 
     public void login(UserDTO userDTO) {
+        clickLoginBtn();
+        fillEmailInput(userDTO.getEmail());
+        pause(5000);
+        fillPasswordInput(userDTO.getPassword());
+    }
+
+    public void loginWith(UserDtoWith userDTO) {
+        clickLoginBtn();
+        fillEmailInput(userDTO.getEmail());
+        pause(5000);
+        fillPasswordInput(userDTO.getPassword());
+    }
+
+    public void loginLombok(UserDtoLombok userDTO) {
         clickLoginBtn();
         fillEmailInput(userDTO.getEmail());
         pause(5000);

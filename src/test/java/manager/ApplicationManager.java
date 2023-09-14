@@ -10,6 +10,7 @@ public class ApplicationManager {
     WebDriver driver;
     LoginHelper loginHelper;
     LogoutHelper logoutHelper;
+    CreateBoardHelper createBoardHelper;
 
     public void init() {
         driver = new ChromeDriver();
@@ -18,6 +19,7 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         loginHelper = new LoginHelper(driver);
         logoutHelper = new LogoutHelper(driver);
+        createBoardHelper = new CreateBoardHelper(driver);
     }
 
     public void tearDown() {
@@ -37,7 +39,16 @@ public class ApplicationManager {
         return logoutHelper;
     }
 
+    public CreateBoardHelper getCreateBoardHelper() {
+        return createBoardHelper;
+    }
+
     public void toMainPage() {
         driver.navigate().to("https://trello.com/");
+    }
+
+    public void goToBoardPage(String emailBeforeDog) {
+        // https://trello.com/u/juliagordyin/boards
+        driver.navigate().to("https://trello.com/u/" + emailBeforeDog + "/boards");
     }
 }

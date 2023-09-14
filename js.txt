@@ -1,0 +1,21 @@
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,250)", "");
+
+----------
+
+WebElement element = driver.findElement(By.id("gbqfd"));
+JavascriptExecutor executor = (JavascriptExecutor)driver;
+executor.executeScript("arguments[0].click();", element);
+-----------------
+
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.document.getElementById('gbqfb').click()");
+
+-------------
+JavascriptExecutor jse = (JavascriptExecutor)driver;
+jse.executeScript("var elem=arguments[0]; setTimeout(function() {elem.click();}, 100)", we);
+
+---------------------
+JavascriptExecutor js = (JavascriptExecutor)driver;
+   js.executeScript("window.scrollTo(0, "+ele.getLocation().x+")");
+   ele.click();
