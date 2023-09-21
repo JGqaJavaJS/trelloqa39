@@ -13,7 +13,7 @@ public class LoginHelper extends BaseHelper {
     }
 
     By byBtnLogin = By.xpath("//a[@data-testid='login']");
-    By byInputEmail = By.xpath("//input[@id='user']");
+    By byInputEmail = By.xpath("//input[@id='username']");
     By byBtnConfirmEmail = By.xpath("//input[@id='login']");
     By byInputPassword = By.xpath("//input[@id='password']");
     By byBtnConfirmPassword = By.xpath("//button[@id='login-submit']");
