@@ -21,27 +21,27 @@ public class BaseTest {
 
     Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
+//    @BeforeMethod(alwaysRun = true)
+//    public void startTest(Method method){
+//        logger.info("Started test ----> " + method.getName());
+//    }
+//
+//    @AfterMethod(alwaysRun = true)
+//    public void stopTest(Method method){
+//        logger.info("Finished test ----> " + method.getName());
+//    }
+
     @BeforeMethod(alwaysRun = true)
-    public void startTest(Method method){
-        logger.info("Started test ----> " + method.getName());
+    public void beforeEachMethod(Method method) {
+        logger.info("started method: " + method.getName());
+        logger.info("started method with params: " + Arrays.toString(method.getParameters()));
     }
 
     @AfterMethod(alwaysRun = true)
-    public void stopTest(Method method){
-        logger.info("Finished test ----> " + method.getName());
+    public void afterEachMethod(Method method) {
+        logger.info("stopped method: " + method.getName());
+        logger.info("stopped method with params: " + Arrays.toString(method.getParameters()));
     }
-
-//    @BeforeMethod
-//    public void beforeEachMethod(Method method) {
-//        logger.info("started method: " + method.getName());
-//        logger.info("started method with params: " + Arrays.toString(method.getParameters()));
-//    }
-//
-//    @AfterMethod
-//    public void afterEachMethod(Method method) {
-//        logger.info("stopped method: " + method.getName());
-//        logger.info("stopped method with params: " + Arrays.toString(method.getParameters()));
-//    }
 
 
     UserDTO userDTO = new UserDTO("123456Aa$", "juliagordyin@gmail.com");

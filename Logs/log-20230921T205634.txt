@@ -1,0 +1,5 @@
+20:56:40 INFO  manager.ApplicationManager - navigate to the page: https://trello.com/
+20:56:50 INFO  tests.BaseTest - Started test ----> loginPositive
+20:56:56 INFO  manager.ApplicationManager - navigate to the page: https://trello.com/
+20:58:17 INFO  tests.BaseTest - Finished test ----> loginPositive
+20:58:17 INFO  manager.ApplicationManager - tear down
