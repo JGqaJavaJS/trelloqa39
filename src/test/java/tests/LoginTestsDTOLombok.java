@@ -15,8 +15,8 @@ public class LoginTestsDTOLombok extends BaseTest {
 
     @BeforeMethod
     public void preconditions() {
-        if(app.getLoginHelper().isElementWorkspaceExist()) {
-            app.getLogoutHelper().logout();
+        if(loginHelper.isElementWorkspaceExist()) {
+            logoutHelper.logout();
         } else {
             app.toMainPage();
         }
