@@ -1,39 +1,41 @@
 package manager;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class BaseHelper {
+    ApplicationManager app = new ApplicationManager();
 
-    WebDriver driver;
-
-    public BaseHelper(WebDriver driver) {
-        this.driver = driver;
-    }
+//    WebDriver driver;
+//
+//    public BaseHelper(WebDriver driver) {
+//        this.driver = driver;
+//    }
 
     private WebElement findElementBase(By by) {
-        return driver.findElement(by);
+        return app.getDriver().findElement(by);
     }
 
     private List<WebElement> findElementsBase(By by) {
-        return driver.findElements(by);
+        return app.getDriver().findElements(by);
     }
 
     public boolean isElementExist(By by) {
         List<WebElement> list = new ArrayList<>();
 
         try {
-            driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            app.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             list = findElementsBase(by);
         } catch (Exception e) {
             e.getMessage();
         } finally {
-            driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            app.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         }
 
         return (list.size() > 0);

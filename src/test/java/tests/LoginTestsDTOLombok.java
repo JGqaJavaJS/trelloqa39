@@ -24,8 +24,8 @@ public class LoginTestsDTOLombok extends BaseTest {
 
     @Test //(priority = 1)
     public void loginPositive() {
-        app.getLoginHelper().loginLombok(userDtoWith);
-        Assert.assertTrue(app.getLoginHelper().isTextWorkspaceDisplays());
+        loginHelper.loginLombok(userDtoWith);
+        Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());
     }
 
     @Test
@@ -34,8 +34,8 @@ public class LoginTestsDTOLombok extends BaseTest {
                 .email("juliagordyin@gmail.com")
                 .password("1256Aa$")
                 .build();
-        app.getLoginHelper().loginLombok(userDtoWithNegative);
-        Assert.assertTrue(app.getLoginHelper().isWrongPasswordTextDisplays());
+        loginHelper.loginLombok(userDtoWithNegative);
+        Assert.assertTrue(loginHelper.isWrongPasswordTextDisplays());
     }
 
 }

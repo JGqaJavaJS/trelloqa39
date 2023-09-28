@@ -2,6 +2,9 @@ package tests;
 
 import dto.UserDTO;
 import manager.ApplicationManager;
+import manager.CreateBoardHelper;
+import manager.LoginHelper;
+import manager.LogoutHelper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.AfterMethod;
@@ -20,6 +23,10 @@ public class BaseTest {
     static ApplicationManager app = new ApplicationManager();
 
     Logger logger = LoggerFactory.getLogger(BaseTest.class);
+
+    LoginHelper loginHelper = new LoginHelper();
+    LogoutHelper logoutHelper = new LogoutHelper();
+    CreateBoardHelper createBoardHelper = new CreateBoardHelper();
 
 //    @BeforeMethod(alwaysRun = true)
 //    public void startTest(Method method){

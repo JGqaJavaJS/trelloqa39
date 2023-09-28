@@ -4,9 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CreateBoardHelper extends BaseHelper{
-    public CreateBoardHelper(WebDriver driver) {
-        super(driver);
-    }
+  //  public CreateBoardHelper(WebDriver driver) {
+//        super(driver);
+//    }
 
     By createNewBoardBtn = By.xpath("//div[@class='board-tile mod-add']");
     By inputBoardName = By.xpath("//input[@data-testid='create-board-title-input']");

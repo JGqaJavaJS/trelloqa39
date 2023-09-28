@@ -8,9 +8,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginHelper extends BaseHelper {
-    public LoginHelper(WebDriver driver) {
-        super(driver);
-    }
+//    public LoginHelper(WebDriver driver) {
+//        super(driver);
+//    }
 
     By byBtnLogin = By.xpath("//a[@data-testid='login']");
     By byInputEmail = By.xpath("//input[@id='username']");

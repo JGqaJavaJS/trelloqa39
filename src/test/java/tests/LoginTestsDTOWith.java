@@ -14,8 +14,8 @@ public class LoginTestsDTOWith extends BaseTest {
 
     @BeforeMethod
     public void preconditions() {
-        if(app.getLoginHelper().isElementWorkspaceExist()) {
-            app.getLogoutHelper().logout();
+        if(loginHelper.isElementWorkspaceExist()) {
+            logoutHelper.logout();
         } else {
             app.toMainPage();
         }
@@ -23,8 +23,8 @@ public class LoginTestsDTOWith extends BaseTest {
 
     @Test //(priority = 1)
     public void loginPositive() {
-        app.getLoginHelper().loginWith(userDtoWith);
-        Assert.assertTrue(app.getLoginHelper().isTextWorkspaceDisplays());
+        loginHelper.loginWith(userDtoWith);
+        Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());
     }
 
     @Test
@@ -32,8 +32,8 @@ public class LoginTestsDTOWith extends BaseTest {
         UserDtoWith wrongPasswordUserDto = new UserDtoWith()
                 .withEmail("juliagordyin@gmail.com")
                 .withPassword("1256Aa$");
-        app.getLoginHelper().loginWith(wrongPasswordUserDto);
-        Assert.assertTrue(app.getLoginHelper().isWrongPasswordTextDisplays());
+        loginHelper.loginWith(wrongPasswordUserDto);
+        Assert.assertTrue(loginHelper.isWrongPasswordTextDisplays());
     }
 
 }

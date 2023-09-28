@@ -11,16 +11,16 @@ public class CreateBoardTests extends BaseTest{
         //go to https://trello.com/u/juliagordyin/boards
         app.goToBoardPage((userDTO.getEmail().split("@"))[0]);
      //   System.out.println(((userDTO.getEmail().split("@"))[0]));
-        if(!app.getLoginHelper().isElementWorkspaceExist()) {
+        if(!loginHelper.isElementWorkspaceExist()) {
             app.toMainPage();
-            app.getLoginHelper().login(userDTO);
+            loginHelper.login(userDTO);
         }
     }
 
     @Test
     public void createBoardPositive() {
         String boardName = randomUtils.createString(5);
-        app.getCreateBoardHelper().createNewBoard(boardName);
-        Assert.assertTrue(app.getCreateBoardHelper().validateTitleBoardName(boardName));
+        createBoardHelper.createNewBoard(boardName);
+        Assert.assertTrue(createBoardHelper.validateTitleBoardName(boardName));
     }
 }

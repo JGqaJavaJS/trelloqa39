@@ -10,8 +10,8 @@ public class LoginTestsDTO extends BaseTest {
 
     @BeforeMethod
     public void preconditions() {
-        if(app.getLoginHelper().isElementWorkspaceExist()) {
-            app.getLogoutHelper().logout();
+        if(loginHelper.isElementWorkspaceExist()) {
+            logoutHelper.logout();
         } else {
             app.toMainPage();
         }
@@ -19,12 +19,12 @@ public class LoginTestsDTO extends BaseTest {
 
     @Test //(priority = 1)
     public void loginPositive() {
-        app.getLoginHelper().login(userDTO);
+        loginHelper.login(userDTO);
 //        app.getLoginHelper().clickLoginBtn();
 //        app.getLoginHelper().fillEmailInput("juliagordyin@gmail.com");
 //        app.getLoginHelper().pause(5000);
 //        app.getLoginHelper().fillPasswordInput("123456Aa$");
-        Assert.assertTrue(app.getLoginHelper().isTextWorkspaceDisplays());
+        Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());
     }
 
 //    @Test //(priority = 2)
@@ -41,12 +41,12 @@ public class LoginTestsDTO extends BaseTest {
     @Test
     public void loginNegativePasswordErrorMessage() {
         UserDTO wrongPasswordUserDto = new UserDTO("123496Aa$", "juliagordyin@gmail.com");
-        app.getLoginHelper().login(wrongPasswordUserDto);
+        loginHelper.login(wrongPasswordUserDto);
 //        app.getLoginHelper().clickLoginBtn();
 //        app.getLoginHelper().fillEmailInput("juliagordyin@gmail.com");
 //        app.getLoginHelper().pause(5000);
 //        app.getLoginHelper().fillPasswordInput("123496Aa$");
-        Assert.assertTrue(app.getLoginHelper().isWrongPasswordTextDisplays());
+        Assert.assertTrue(loginHelper.isWrongPasswordTextDisplays());
     }
 
 }

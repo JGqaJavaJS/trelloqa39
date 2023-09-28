@@ -36,80 +36,80 @@ public class LoginTestStart extends BaseTest{
 //        driver.manage().window().maximize();
 //    }
 
-    @Test
-    public void loginPositive() {
-        WebElement btnLogin = findElementBase(byBtnLogin);
-        //WebElement btnLogin = driver.findElement(By.xpath("//a[@data-testid='login']"));
-        clickBase(btnLogin);
-        //btnLogin.click();
-
-
-        WebElement inputEmail = findElementBase(byInputEmail);
-       // WebElement inputEmail = driver.findElement(By.xpath("//input[@id='user']"));
-        sendTextBase(inputEmail, "juliagordyin@gmail.com");
-//        inputEmail.click();
-//        inputEmail.clear();
-//        inputEmail.sendKeys("juliagordyin@gmail.com");
-
-        WebElement btnConfirmEmail = findElementBase(byBtnConfirmEmail);
-        clickBase(btnConfirmEmail);
-        //driver.findElement(By.xpath("//input[@id='login']")).click();
-
-        WebElement inputPassword = findElementBase(byInputPassword);
-        //WebElement inputPassword = driver.findElement(By.xpath("//input[@id='password']"));
-        sendTextBase(inputPassword, "123456Aa$");
-//        inputPassword.click();
-//        inputPassword.clear();
-//        inputPassword.sendKeys("123456Aa$");
-
-
-        WebElement btnConfirmPassword = findElementBase(byBtnConfirmPassword);
-       clickBase(btnConfirmPassword);
-        //driver.findElement(By.xpath("//button[@id='login-submit']")).click();
-
-
-        WebElement textWorkSpace = findElementBase(byTextWorkSpace);
-//        WebElement textWorkspaceElement =
-//                driver.findElement(By.xpath("//span[@data-testid='home-team-tab-name']"));
-
-        String textWorkspace = getTextBase(textWorkSpace);
-        //String textWorkspace = textWorkspaceElement.getText().toUpperCase();
-
-        Assert.assertTrue(isElementContainsText("workspace".toUpperCase(), textWorkspace));
-        //Assert.assertTrue(textWorkspace.contains("workspace".toUpperCase()));
-
-    }
-
-    @Test
-    public void loginNegativePassword() {
-        WebElement btnLogin = findElementBase(byBtnLogin);
-        clickBase(btnLogin);
-
-        WebElement inputEmail = findElementBase(byInputEmail);
-        sendTextBase(inputEmail, "juliagordyin@gmail.com");
-
-        WebElement btnConfirmEmail = findElementBase(byBtnConfirmEmail);
-        clickBase(btnConfirmEmail);
-
-        WebElement inputPassword = findElementBase(byInputPassword);
-        sendTextBase(inputPassword, "123457Aa$");
-
-        WebElement btnConfirmPassword = findElementBase(byBtnConfirmPassword);
-        clickBase(btnConfirmPassword);
-
-List<WebElement> listWithWorkspaceText = findElementsBase(byTextWorkSpace);
-Assert.assertFalse(listWithWorkspaceText.size() > 0); // true =
-
+//    @Test
+//    public void loginPositive() {
+//        WebElement btnLogin = findElementBase(byBtnLogin);
+//        //WebElement btnLogin = driver.findElement(By.xpath("//a[@data-testid='login']"));
+//        clickBase(btnLogin);
+//        //btnLogin.click();
+//
+//
+//        WebElement inputEmail = findElementBase(byInputEmail);
+//       // WebElement inputEmail = driver.findElement(By.xpath("//input[@id='user']"));
+//        sendTextBase(inputEmail, "juliagordyin@gmail.com");
+////        inputEmail.click();
+////        inputEmail.clear();
+////        inputEmail.sendKeys("juliagordyin@gmail.com");
+//
+//        WebElement btnConfirmEmail = findElementBase(byBtnConfirmEmail);
+//        clickBase(btnConfirmEmail);
+//        //driver.findElement(By.xpath("//input[@id='login']")).click();
+//
+//        WebElement inputPassword = findElementBase(byInputPassword);
+//        //WebElement inputPassword = driver.findElement(By.xpath("//input[@id='password']"));
+//        sendTextBase(inputPassword, "123456Aa$");
+////        inputPassword.click();
+////        inputPassword.clear();
+////        inputPassword.sendKeys("123456Aa$");
+//
+//
+//        WebElement btnConfirmPassword = findElementBase(byBtnConfirmPassword);
+//       clickBase(btnConfirmPassword);
+//        //driver.findElement(By.xpath("//button[@id='login-submit']")).click();
+//
+//
 //        WebElement textWorkSpace = findElementBase(byTextWorkSpace);
+////        WebElement textWorkspaceElement =
+////                driver.findElement(By.xpath("//span[@data-testid='home-team-tab-name']"));
+//
 //        String textWorkspace = getTextBase(textWorkSpace);
+//        //String textWorkspace = textWorkspaceElement.getText().toUpperCase();
+//
 //        Assert.assertTrue(isElementContainsText("workspace".toUpperCase(), textWorkspace));
-
-    }
-
-//    @AfterClass
-//    public void postConditions() {
-//        driver.quit();
+//        //Assert.assertTrue(textWorkspace.contains("workspace".toUpperCase()));
+//
 //    }
+//
+//    @Test
+//    public void loginNegativePassword() {
+//        WebElement btnLogin = findElementBase(byBtnLogin);
+//        clickBase(btnLogin);
+//
+//        WebElement inputEmail = findElementBase(byInputEmail);
+//        sendTextBase(inputEmail, "juliagordyin@gmail.com");
+//
+//        WebElement btnConfirmEmail = findElementBase(byBtnConfirmEmail);
+//        clickBase(btnConfirmEmail);
+//
+//        WebElement inputPassword = findElementBase(byInputPassword);
+//        sendTextBase(inputPassword, "123457Aa$");
+//
+//        WebElement btnConfirmPassword = findElementBase(byBtnConfirmPassword);
+//        clickBase(btnConfirmPassword);
+//
+//List<WebElement> listWithWorkspaceText = findElementsBase(byTextWorkSpace);
+//Assert.assertFalse(listWithWorkspaceText.size() > 0); // true =
+//
+////        WebElement textWorkSpace = findElementBase(byTextWorkSpace);
+////        String textWorkspace = getTextBase(textWorkSpace);
+////        Assert.assertTrue(isElementContainsText("workspace".toUpperCase(), textWorkspace));
+//
+//    }
+//
+////    @AfterClass
+////    public void postConditions() {
+////        driver.quit();
+////    }
 
 
 }
