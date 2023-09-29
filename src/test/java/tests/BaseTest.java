@@ -1,28 +1,19 @@
 package tests;
 
 import dto.UserDTO;
-import manager.ApplicationManager;
-import manager.CreateBoardHelper;
-import manager.LoginHelper;
-import manager.LogoutHelper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import manager.*;
+import org.testng.annotations.*;
 import utils.RandomUtils;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
 
+@Listeners(TestNgListener.class)
 public class BaseTest {
 
     RandomUtils randomUtils = new RandomUtils();
 
     static ApplicationManager app = new ApplicationManager();
-
-    Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
     LoginHelper loginHelper = new LoginHelper();
     LogoutHelper logoutHelper = new LogoutHelper();
