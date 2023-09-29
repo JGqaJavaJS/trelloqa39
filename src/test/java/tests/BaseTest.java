@@ -2,6 +2,8 @@ package tests;
 
 import dto.UserDTO;
 import manager.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 import utils.RandomUtils;
 
@@ -12,8 +14,9 @@ import java.util.Arrays;
 public class BaseTest {
 
     RandomUtils randomUtils = new RandomUtils();
+    Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
-    static ApplicationManager app = new ApplicationManager();
+    // static ApplicationManager app = new ApplicationManager();
 
     LoginHelper loginHelper = new LoginHelper();
     LogoutHelper logoutHelper = new LogoutHelper();
@@ -44,14 +47,14 @@ public class BaseTest {
 
     UserDTO userDTO = new UserDTO("123456Aa$", "juliagordyin@gmail.com");
 
-    @BeforeSuite
+    @BeforeSuite(alwaysRun = true)
     public void preConditions() {
-        app.init();
+        ApplicationManager.init();
     }
 
-    @AfterSuite
+    @AfterSuite(alwaysRun = true)
     public void postConditions() {
-        app.tearDown();
+        ApplicationManager.tearDown();
     }
 
 }

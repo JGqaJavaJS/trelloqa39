@@ -141,15 +141,18 @@ public class WDListener extends AbstractWebDriverEventListener {
         logger.error(throwable.getMessage());
         DatesUtils datesUtils = new DatesUtils();
         String name = "src/test/screenshots/screenshot-" + datesUtils.getDateString() + ".png";
-        takeScreenShot(name);
+//        takeScreenShot(name);
+        takeScreenShot((TakesScreenshot) driver, name);
         logger.info("created screenshot with the name: " + name);
     }
 
-    private void takeScreenShot(String link){
-        ApplicationManager app = new ApplicationManager();
-        File tmp = ((TakesScreenshot)app.getDriver()).getScreenshotAs(OutputType.FILE);
-        File screenshot = new File(link);
+    private void takeScreenShot(TakesScreenshot takesScreenshot, String link){
+        //ApplicationManager app = new ApplicationManager();
+        //File tmp = ((TakesScreenshot)app.getDriver()).getScreenshotAs(OutputType.FILE);
+        //File screenshot = new File(link);
         try {
+            File tmp = takesScreenshot.getScreenshotAs(OutputType.FILE);
+            File screenshot = new File(link);
             Files.copy(tmp, screenshot);
         } catch (IOException e) {
             e.printStackTrace();

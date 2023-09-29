@@ -2,6 +2,7 @@ package tests;
 
 import dto.UserDTO;
 import dto.UserDtoWith;
+import manager.ApplicationManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -17,7 +18,7 @@ public class LoginTestsDTOWith extends BaseTest {
         if(loginHelper.isElementWorkspaceExist()) {
             logoutHelper.logout();
         } else {
-            app.toMainPage();
+            ApplicationManager.toMainPage();
         }
     }
 

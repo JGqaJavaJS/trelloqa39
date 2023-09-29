@@ -10,19 +10,19 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-    Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
+   // Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
 
     //WebDriver driver;
-    EventFiringWebDriver driver;
+    static EventFiringWebDriver driver;
 //    LoginHelper loginHelper;
 //    LogoutHelper logoutHelper;
 //    CreateBoardHelper createBoardHelper;
 
-    public void init() {
+    public static void init() {
         //driver = new ChromeDriver();
         driver = new EventFiringWebDriver(new ChromeDriver());
         driver.register(new WDListener());
-        logger.info("navigate to the page: " + "https://trello.com/");
+      //  logger.info("navigate to the page: " + "https://trello.com/");
         driver.navigate().to("https://trello.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -31,12 +31,12 @@ public class ApplicationManager {
 //        createBoardHelper = new CreateBoardHelper();
     }
 
-    public void tearDown() {
-        logger.info("tear down");
+    public static void tearDown() {
+       // logger.info("tear down");
         driver.quit();
     }
 
-    protected WebDriver getDriver() {
+    public static EventFiringWebDriver getDriver() {
         if(driver == null) {
             init();
         }
@@ -56,14 +56,14 @@ public class ApplicationManager {
 //        return createBoardHelper;
 //    }
 
-    public void toMainPage() {
-        logger.info("navigate to the page: " + "https://trello.com/");
+    public static void toMainPage() {
+     //   logger.info("navigate to the page: " + "https://trello.com/");
         driver.navigate().to("https://trello.com/");
     }
 
-    public void goToBoardPage(String emailBeforeDog) {
+    public static void goToBoardPage(String emailBeforeDog) {
         // https://trello.com/u/juliagordyin/boards
-        logger.info("navigate to the page: " + "https://trello.com/u/" + emailBeforeDog + "/boards");
+       // logger.info("navigate to the page: " + "https://trello.com/u/" + emailBeforeDog + "/boards");
         driver.navigate().to("https://trello.com/u/" + emailBeforeDog + "/boards");
     }
 }

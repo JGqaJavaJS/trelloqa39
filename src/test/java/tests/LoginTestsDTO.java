@@ -2,6 +2,7 @@ package tests;
 
 import com.fasterxml.jackson.databind.ser.Serializers;
 import dto.UserDTO;
+import manager.ApplicationManager;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,7 +14,7 @@ public class LoginTestsDTO extends BaseTest {
         if(loginHelper.isElementWorkspaceExist()) {
             logoutHelper.logout();
         } else {
-            app.toMainPage();
+            ApplicationManager.toMainPage();
         }
     }
 
