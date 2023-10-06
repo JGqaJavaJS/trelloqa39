@@ -22,6 +22,8 @@ public class BaseTest {
     LogoutHelper logoutHelper = new LogoutHelper();
     CreateBoardHelper createBoardHelper = new CreateBoardHelper();
 
+    UserDTO userDTO = new UserDTO("123456Aa$", "juliagordyin@gmail.com");
+
 //    @BeforeMethod(alwaysRun = true)
 //    public void startTest(Method method){
 //        logger.info("Started test ----> " + method.getName());
@@ -43,9 +45,6 @@ public class BaseTest {
         logger.info("stopped method: " + method.getName());
         logger.info("stopped method with params: " + Arrays.toString(method.getParameters()));
     }
-
-
-    UserDTO userDTO = new UserDTO("123456Aa$", "juliagordyin@gmail.com");
 
     @BeforeSuite(alwaysRun = true)
     public void preConditions() {

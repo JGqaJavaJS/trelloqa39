@@ -30,12 +30,12 @@ public class BaseHelper {
         List<WebElement> list = new ArrayList<>();
 
         try {
-            app.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+            ApplicationManager.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
             list = findElementsBase(by);
         } catch (Exception e) {
             e.getMessage();
         } finally {
-            app.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            ApplicationManager.getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         }
 
         return (list.size() > 0);

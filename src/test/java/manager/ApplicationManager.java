@@ -25,7 +25,7 @@ public class ApplicationManager {
       //  logger.info("navigate to the page: " + "https://trello.com/");
         driver.navigate().to("https://trello.com/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 //        loginHelper = new LoginHelper();
 //        logoutHelper = new LogoutHelper();
 //        createBoardHelper = new CreateBoardHelper();
