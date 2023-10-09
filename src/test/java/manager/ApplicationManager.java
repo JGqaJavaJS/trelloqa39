@@ -2,6 +2,8 @@ package manager;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,17 +12,28 @@ import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
 
-   // Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
+    static Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
 
     //WebDriver driver;
     static EventFiringWebDriver driver;
+    static  String browser;
 //    LoginHelper loginHelper;
 //    LogoutHelper logoutHelper;
 //    CreateBoardHelper createBoardHelper;
 
     public static void init() {
         //driver = new ChromeDriver();
+
         driver = new EventFiringWebDriver(new ChromeDriver());
+
+//        if(browser.equals(BrowserType.CHROME)) {
+//            driver = new EventFiringWebDriver(new ChromeDriver());
+//            logger.info("Test started on Chrome");
+//        } else if(browser.equals(BrowserType.FIREFOX)){
+//            driver = new EventFiringWebDriver(new FirefoxDriver());
+//            logger.info("Test started on FireFox");
+//        }
+
         driver.register(new WDListener());
       //  logger.info("navigate to the page: " + "https://trello.com/");
         driver.navigate().to("https://trello.com/");

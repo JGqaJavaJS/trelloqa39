@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18ae61b-88a1-4e9b-9d6b-b26bd48c7ced" name="Changes" comment="ng listener fixed: add annotation to the baseTest class">
+    <list default="true" id="f18ae61b-88a1-4e9b-9d6b-b26bd48c7ced" name="Changes" comment="upd static for driver">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/manager/ApplicationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/ApplicationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/manager/WDListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/WDListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateBoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateBoardTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTOLombok.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTOLombok.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTOWith.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginTestsDTOWith.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -324,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695978151970</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="upd static for driver">
+      <option name="closed" value="true" />
+      <created>1695986875745</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1695986875745</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -341,7 +342,8 @@
     <MESSAGE value="refactoring to singltone and add listener" />
     <MESSAGE value="refactoring to singltone and add listener part 2" />
     <MESSAGE value="ng listener fixed: add annotation to the baseTest class" />
-    <option name="LAST_COMMIT_MESSAGE" value="ng listener fixed: add annotation to the baseTest class" />
+    <MESSAGE value="upd static for driver" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd static for driver" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
