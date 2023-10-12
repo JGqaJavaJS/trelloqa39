@@ -1,2 +1,5 @@
  ./gradlew mytest
  ./gradlew test
+ ./gradlew clean test
+ ./gradlew clean -Pbrowser=firefox mytest
+./gradlew clean -Pbrowser=chrome mytest

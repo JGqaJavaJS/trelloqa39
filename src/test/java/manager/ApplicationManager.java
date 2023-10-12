@@ -17,6 +17,11 @@ public class ApplicationManager {
     //WebDriver driver;
     static EventFiringWebDriver driver;
     static  String browser;
+
+    public ApplicationManager() {
+        browser = System.getProperty("browser", BrowserType.CHROME);
+    }
+
 //    LoginHelper loginHelper;
 //    LogoutHelper logoutHelper;
 //    CreateBoardHelper createBoardHelper;
@@ -24,15 +29,15 @@ public class ApplicationManager {
     public static void init() {
         //driver = new ChromeDriver();
 
-        driver = new EventFiringWebDriver(new ChromeDriver());
+    //    driver = new EventFiringWebDriver(new ChromeDriver());
 
-//        if(browser.equals(BrowserType.CHROME)) {
-//            driver = new EventFiringWebDriver(new ChromeDriver());
-//            logger.info("Test started on Chrome");
-//        } else if(browser.equals(BrowserType.FIREFOX)){
-//            driver = new EventFiringWebDriver(new FirefoxDriver());
-//            logger.info("Test started on FireFox");
-//        }
+        if(browser.equals(BrowserType.CHROME)) {
+            driver = new EventFiringWebDriver(new ChromeDriver());
+            logger.info("Test started on Chrome");
+        } else if(browser.equals(BrowserType.FIREFOX)){
+            driver = new EventFiringWebDriver(new FirefoxDriver());
+            logger.info("Test started on FireFox");
+        }
 
         driver.register(new WDListener());
       //  logger.info("navigate to the page: " + "https://trello.com/");
