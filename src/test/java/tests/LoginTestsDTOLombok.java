@@ -1,5 +1,6 @@
 package tests;
 
+import data.ProviderDataLogin;
 import dto.UserDtoLombok;
 import dto.UserDtoWith;
 import manager.ApplicationManager;
@@ -26,6 +27,12 @@ public class LoginTestsDTOLombok extends BaseTest {
     @Test (groups = {"smoke"})//(priority = 1)
     public void loginPositive() {
         loginHelper.loginLombok(userDtoWith);
+        Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());
+    }
+
+    @Test (dataProvider = "usersPositiveData", dataProviderClass = ProviderDataLogin.class)
+    public void loginPositiveDataProvider(UserDtoLombok user) {
+        loginHelper.loginLombok(user);
         Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());
     }
 
