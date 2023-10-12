@@ -23,7 +23,7 @@ public class LoginTestsDTOLombok extends BaseTest {
         }
     }
 
-    @Test //(priority = 1)
+    @Test (groups = {"smoke"})//(priority = 1)
     public void loginPositive() {
         loginHelper.loginLombok(userDtoWith);
         Assert.assertTrue(loginHelper.isTextWorkspaceDisplays());

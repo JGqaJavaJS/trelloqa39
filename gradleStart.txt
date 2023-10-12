@@ -1,5 +1,10 @@
- ./gradlew mytest
- ./gradlew test
- ./gradlew clean test
- ./gradlew clean -Pbrowser=firefox mytest
+./gradlew mytest
+./gradlew test
+./gradlew clean test
+./gradlew clean -Pbrowser=firefox mytest
 ./gradlew clean -Pbrowser=chrome mytest
+./gradlew shortest
+./gradlew clean -Pbrowser=firefox -Dgroups=smoke shortest
+./gradlew clean -Pbrowser=firefox -Dsuite=login withsuits
+
+

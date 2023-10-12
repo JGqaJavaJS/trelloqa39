@@ -1,8 +1,10 @@
 package manager;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
@@ -33,9 +35,17 @@ public class ApplicationManager {
 
         if(browser.equals(BrowserType.CHROME)) {
             driver = new EventFiringWebDriver(new ChromeDriver());
+           // driver = new EventFiringWebDriver(WebDriverManager.chromedriver().create());
             logger.info("Test started on Chrome");
         } else if(browser.equals(BrowserType.FIREFOX)){
-            driver = new EventFiringWebDriver(new FirefoxDriver());
+           // driver = new EventFiringWebDriver(new FirefoxDriver());
+
+//            FirefoxOptions firefoxOptions = new FirefoxOptions();
+//            WebDriverManager.firefoxdriver().setup();
+//            driver = new EventFiringWebDriver(new FirefoxDriver(firefoxOptions));
+
+            driver = new EventFiringWebDriver(WebDriverManager.firefoxdriver().create());
+
             logger.info("Test started on FireFox");
         }
 
