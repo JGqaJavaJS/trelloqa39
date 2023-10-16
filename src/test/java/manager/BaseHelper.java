@@ -26,18 +26,20 @@ public class BaseHelper {
         return app.getDriver().findElements(by);
     }
 
-    public boolean isElementExist(By by) {
+    public boolean isElementExist(By by, int timeout) {
         List<WebElement> list = new ArrayList<>();
-
-        try {
-            ApplicationManager.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        if(timeout == 60) {
             list = findElementsBase(by);
-        } catch (Exception e) {
-            e.getMessage();
-        } finally {
-            ApplicationManager.getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        } else {
+            try {
+                ApplicationManager.getDriver().manage().timeouts().implicitlyWait(timeout, TimeUnit.SECONDS);
+                list = findElementsBase(by);
+            } catch (Exception e) {
+                e.getMessage();
+            } finally {
+                ApplicationManager.getDriver().manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+            }
         }
-
         return (list.size() > 0);
     }
 
@@ -75,6 +77,11 @@ public class BaseHelper {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void jsClick(String str) {
+        JavascriptExecutor js = (JavascriptExecutor) ApplicationManager.getDriver();
+        js.executeScript(str);
     }
 
 }

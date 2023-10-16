@@ -40,7 +40,7 @@ public class LoginHelper extends BaseHelper {
     }
 
     public boolean isElementWorkspaceExist() {
-        return isElementExist(byTextWorkSpace);
+        return isElementExist(byTextWorkSpace, 5);
     }
 
     public boolean isWrongPasswordTextDisplays() {
