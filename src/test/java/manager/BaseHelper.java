@@ -22,7 +22,7 @@ public class BaseHelper {
         return app.getDriver().findElement(by);
     }
 
-    private List<WebElement> findElementsBase(By by) {
+    protected List<WebElement> findElementsBase(By by) {
         return app.getDriver().findElements(by);
     }
 

@@ -21,6 +21,7 @@ public class BaseTest {
     LoginHelper loginHelper = new LoginHelper();
     LogoutHelper logoutHelper = new LogoutHelper();
     CreateBoardHelper createBoardHelper = new CreateBoardHelper();
+    DeleteBoardHelper deleteBoardHelper = new DeleteBoardHelper();
 
     UserDTO userDTO = new UserDTO("123456Aa$", "juliagordyin@gmail.com");
 
