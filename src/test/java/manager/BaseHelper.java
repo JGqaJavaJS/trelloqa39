@@ -2,6 +2,7 @@ package manager;
 
 import com.google.common.io.Files;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import java.io.File;
 import java.io.IOException;
@@ -43,6 +44,10 @@ public class BaseHelper {
         return (list.size() > 0);
     }
 
+    public String getAttribute(By locator, String value) {
+        return findElementBase(locator).getAttribute(value);
+    }
+
     public void clickBase(By by) {
         WebElement element = findElementBase(by);
         element.click();
@@ -82,6 +87,11 @@ public class BaseHelper {
     public void jsClick(String str) {
         JavascriptExecutor js = (JavascriptExecutor) ApplicationManager.getDriver();
         js.executeScript(str);
+    }
+
+    public void moveMouseOnElement(By locator) {
+        Actions action = new Actions(ApplicationManager.getDriver());
+        action.moveToElement(findElementBase(locator)).perform();
     }
 
 }

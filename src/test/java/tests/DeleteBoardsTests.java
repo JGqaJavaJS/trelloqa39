@@ -16,8 +16,13 @@ public class DeleteBoardsTests extends BaseTest {
         if(!loginHelper.isElementWorkspaceExist()) {
             ApplicationManager.toMainPage();
             loginHelper.login(userDTO);
+            try {
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
-        deleteBoardHelper.deleteAllBoards();
+        deleteBoardHelper.deleteAllBoards(userDTO);
         // add minimum one board
     }
 
@@ -31,8 +36,8 @@ public class DeleteBoardsTests extends BaseTest {
     public void deleteOneBoardByName() {
         String boardName = randomUtils.createString(5);
         createBoardHelper.createNewBoard(boardName);
-        deleteBoardHelper.deleteOneBoardByName(boardName);
-        Assert.assertTrue(deleteBoardHelper.validateBoardByNameDeleted(boardName));
+        deleteBoardHelper.deleteOneBoardByName(boardName, userDTO);
+        Assert.assertTrue(deleteBoardHelper.validateBoardByNameDeleted(boardName, userDTO));
     }
 
 

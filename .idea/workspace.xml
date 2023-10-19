@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f18ae61b-88a1-4e9b-9d6b-b26bd48c7ced" name="Changes" comment="start tests delete boards">
+    <list default="true" id="f18ae61b-88a1-4e9b-9d6b-b26bd48c7ced" name="Changes" comment="start tests delete boards 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/log-20230921T205634.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/log-20230921T210101.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/BaseHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/DeleteBoardHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/DeleteBoardHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateBoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateBoardTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/DeleteBoardsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/DeleteBoardsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/screenshots/screenshot-2023-10-06 15:43:09.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +80,7 @@
       <recent name="tests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LoginTestsDTOLombok.loginPositiveDataProvider">
+  <component name="RunManager" selected="Gradle.DeleteBoardsTests.deleteOneBoardByName">
     <configuration name="CreateBoardTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -98,7 +105,7 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTestsDTO" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CreateBoardTests.createBoardPositive" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -111,7 +118,55 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.LoginTestsDTO&quot;" />
+            <option value="&quot;tests.CreateBoardTests.createBoardPositive&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeleteBoardsTests.deleteAllBoards" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.DeleteBoardsTests.deleteAllBoards&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>true</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="DeleteBoardsTests.deleteOneBoardByName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.DeleteBoardsTests.deleteOneBoardByName&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,61 +201,13 @@
       <ForceTestExec>true</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="LoginTestsDTOWith" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.LoginTestsDTOWith&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests in 'tests'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.*&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>true</ForceTestExec>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.LoginTestsDTOLombok.loginPositiveDataProvider" />
+        <item itemvalue="Gradle.DeleteBoardsTests.deleteOneBoardByName" />
         <item itemvalue="Gradle.CreateBoardTests" />
-        <item itemvalue="Gradle.Tests in 'tests'" />
-        <item itemvalue="Gradle.LoginTestsDTO" />
-        <item itemvalue="Gradle.LoginTestsDTOWith" />
+        <item itemvalue="Gradle.DeleteBoardsTests.deleteAllBoards" />
+        <item itemvalue="Gradle.CreateBoardTests.createBoardPositive" />
+        <item itemvalue="Gradle.LoginTestsDTOLombok.loginPositiveDataProvider" />
       </list>
     </recent_temporary>
   </component>
@@ -373,7 +380,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697132194410</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="start tests delete boards 2">
+      <option name="closed" value="true" />
+      <created>1697476272416</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1697476272417</updated>
+    </task>
+    <task id="LOCAL-00022" summary="start tests delete boards 3">
+      <option name="closed" value="true" />
+      <created>1697479678922</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1697479678922</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -397,7 +420,9 @@
     <MESSAGE value="upd pipelines" />
     <MESSAGE value="dataprovider" />
     <MESSAGE value="start tests delete boards" />
-    <option name="LAST_COMMIT_MESSAGE" value="start tests delete boards" />
+    <MESSAGE value="start tests delete boards 2" />
+    <MESSAGE value="start tests delete boards 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="start tests delete boards 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -414,7 +439,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/tests/CreateBoardTests.java</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
