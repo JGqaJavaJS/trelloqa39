@@ -49,6 +49,9 @@ task shortest(type: Test){
     }
 
     }
+    if(project.hasProperty('target')){
+        systemProperty 'target', "${target}"
+    }
 }
 
 task withsuits(type: Test){
@@ -67,6 +70,5 @@ task withsuits(type: Test){
         } else {
             suites 'src/test/resources/testng.xml'
         }
-
     }
 }

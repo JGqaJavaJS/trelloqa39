@@ -6,5 +6,7 @@
 ./gradlew shortest
 ./gradlew clean -Pbrowser=firefox -Dgroups=smoke shortest
 ./gradlew clean -Pbrowser=firefox -Dsuite=login withsuits
+./gradlew clean -Pbrowser=firefox -Ptarget=preprod -Dgroups=smoke shortest
+
 
 

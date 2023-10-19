@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.BrowserType;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.ConfigProperties;
 
 import java.util.concurrent.TimeUnit;
 
@@ -51,7 +52,8 @@ public class ApplicationManager {
 
         driver.register(new WDListener());
       //  logger.info("navigate to the page: " + "https://trello.com/");
-        driver.navigate().to("https://trello.com/");
+      //  driver.navigate().to("https://trello.com/");
+        driver.navigate().to(ConfigProperties.getProperty("url"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 //        loginHelper = new LoginHelper();
