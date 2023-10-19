@@ -46,4 +46,11 @@ public class LoginTestsDTOLombok extends BaseTest {
         Assert.assertTrue(loginHelper.isWrongPasswordTextDisplays());
     }
 
+    @Test(dataProvider = "loginCSV", dataProviderClass = ProviderDataLogin.class)
+    public void loginWithWrongEmail(UserDtoLombok user1) {
+        loginHelper.clickLoginBtn();
+        loginHelper.fillEmailInput(user1.getEmail());
+        Assert.assertTrue(loginHelper.validateSignUpTextOnBtnDisplays());
+    }
+
 }

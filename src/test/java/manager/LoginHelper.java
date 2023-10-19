@@ -19,6 +19,7 @@ public class LoginHelper extends BaseHelper {
     By byBtnConfirmPassword = By.xpath("//button[@id='login-submit']");
     By byTextWorkSpace = By.xpath("//span[@data-testid='home-team-tab-name']");
     By byErrorPassword = By.xpath("//div[@data-testid='form-error--content']//span");
+    By textBtnSignUp = By.xpath("//button[@id='signup-submit']/span");
 
     public void clickLoginBtn() {
         clickBase(byBtnLogin);
@@ -67,5 +68,9 @@ public class LoginHelper extends BaseHelper {
         fillEmailInput(userDTO.getEmail());
         pause(5000);
         fillPasswordInput(userDTO.getPassword());
+    }
+
+    public boolean validateSignUpTextOnBtnDisplays() {
+        return isElementContainsText("Sign up".toUpperCase(), getTextBase(textBtnSignUp));
     }
 }
