@@ -10,7 +10,7 @@ public class DatesUtils {
         Date currentDate = new Date();
 
         // Define a date format pattern
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH_mm_ss");
 
         return dateFormat.format(currentDate);
     }
